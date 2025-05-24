@@ -1,3 +1,4 @@
+import time
 import mido
 from mido import Message, MidiFile, MidiTrack
 
@@ -6,13 +7,15 @@ from mido import Message, MidiFile, MidiTrack
 @port is the midi input port
 @device_id is the id passed for note-on messages (sometimes keyboards pass note-off as a different id or as velocity=0)
 @tempo is the bpm tempo for the midi recording *** HAS TO BE SET **
+@delay is the amount of time to wait before starting recording, at which point recording will start automatically.
 @debug is for posting messages on console or not
 
 """
 class CK_rec(object):
-    def __init__(self, port, device_id, tempo=120, debug=True):
+    def __init__(self, port, device_id, tempo=120, delay=0, debug=True):
         self.port = port
         self.tempo = tempo
+        self.delay = delay
         self.debug = debug
         self.on_id = device_id
         self.__mid = MidiFile()
@@ -21,7 +24,13 @@ class CK_rec(object):
         self.__activesense = 0
 
     def prepareTrack(self):
-        input("Press [ENTER] to start recording...")
+        # Delay the recording
+        if self.delay == 0:
+            input("Press [ENTER] to start recording...")
+        else:
+            print("Auto-Recording after", self.delay, "seconds...")
+            time.sleep(self.delay)
+
         print("\n**** 📹 You are now RECORDING *****")
         print("(Press Control-C to stop the recording)\n")
         self.__mid.tracks.append(self.__track)
