@@ -1,15 +1,15 @@
 # Simple MIDI Recorder
-## enhanced by @lawrenceper to provide some MIDI Recording functionality.
+## New features and enhancements by @lawrenceper.
  :notes: MIDI recorder tool. Record and save a stream of midi input as a midi file.
 
 ###### (Developed as a support tool for the [CodeKlavier](https://codeklavier.space))
 
 ## Changes from the Original
 
-This is a fork of [Narcode's MIDI Recorder](https://github.com/narcode/MIDI_recorder). I've made the following changes, ensuring that visually impaired individuals have access to a cross platform MIDI recorder:
+This is a fork of [Narcode's MIDI Recorder](https://github.com/narcode/MIDI_recorder). I've made the following enhancements, ensuring that visually impaired individuals have access to a cross platform MIDI recorder:
 
-- It is now possible to set the MIDI tempo before recording. This is so that if you decide to send your performances to accessible sheet music software like MuseScore or another accessible music editor, the tempo will be correctly set and interpreted.
-- It is now possible to have the program Wait for a specific amount of time before starting recording. This is so that to find your way to the keyboard before recording starts, getting rid of unnecessary silence before you play.
+- You can now set the MIDI tempo before recording, so that your performance is easily interpreted by your DAW or sheet music software.
+- the program can Wait for a specific amount of time before the recording starts. It's useful when your piano keyboard is across the room.
 
 ## To Do:
 
